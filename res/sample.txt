@@ -1,0 +1,46 @@
+load images/source.ppm ppmFile
+load images/source.png pngFile
+load images/source.bmp bmpFile
+load images/source.jpg jpgFile
+blur ppmFile ppm-blurred
+save images/ppm-blurred.ppm ppm-blurred
+blur ppm-blurred ppm-blurred-twice
+save images/ppm-blurred-twice.ppm ppm-blurred-twice
+sharpen pngFile png-sharpened
+save images/png-sharpened.png png-sharpened
+sharpen png-sharpened png-sharpened-twice
+save images/png-sharpened-twice.png png-sharpened-twice
+
+luma-grayscale bmpFile bmp-luma-matrix
+sepia-grayscale jpgFile jpg-sepia-matrix
+save images/bmp-luma-matrix-grayscaled.bmp bmp-luma-matrix
+save images/jpg-sepia-matrix-grayscaled.jpg jpg-sepia-matrix
+intensity-grayscale pngFile png-intensity-matrix
+save images/png-intensity-matrix-grayscaled.ppm png-intensity-matrix
+red-grayscale pngFile png-matrix-red-grayscale
+save images/png-red-matrix-grayscaled.png png-matrix-red-grayscale
+green-grayscale pngFile png-matrix-green-grayscale
+save images/png-green-matrix-grayscaled.png png-matrix-green-grayscale
+blue-grayscale pngFile png-matrix-blue-grayscale
+save images/png-blue-matrix-grayscaled.png png-matrix-blue-grayscale
+
+brighten -100 ppmFile ppm-darker
+save images/saveToJPG-ppm-darker.jpg ppm-darker
+brighten 50 jpgFile jpg-brighter
+save images/saveToPNG-jpg-brighter.png jpg-brighter
+value-component pngFile png-value 
+save images/saveToBMP-png-value-grayscaled.bmp png-value
+luma-component ppmFile ppm-luma
+save images/ppm-luma-grayscaled.ppm ppm-luma
+intensity-component pngFile png-intensity
+save images/saveToPPM-png-intensity-grayscaled.ppm png-intensity
+red-component pngFile png-red-grayscale
+save images/png-red-grayscaled.png png-red-grayscale
+green-component pngFile png-green-grayscale
+save images/png-green-grayscaled.png png-green-grayscale
+blue-component pngFile png-blue-grayscale
+save images/png-blue-grayscaled.png png-blue-grayscale
+
+load images/ppm-blurred-twice.ppm pngFile
+save images/ppm-blurred-overwrite-old-png.png pngFile
+exit
